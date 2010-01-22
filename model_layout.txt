@@ -1,0 +1,18 @@
+user
+	- real name
+	- email
+	- groups
+group
+	- <>
+message
+	- body
+	- created by
+	- created when
+job
+	- command to execute
+	- time to execute
+	+ get_status
+command
+	- users
+	- message
+	+ build_command_string
