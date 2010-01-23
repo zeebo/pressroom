@@ -4,15 +4,13 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Example:
-    # (r'^pressroom/', include('pressroom.foo.urls')),
+reg_patterns = patterns('pressroom.register.views',
+    (r'^$', 'register'),
+    (r'^(?P<token>[0-9a-f]+)/$', 'activate'),
+)
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+urlpatterns = patterns('',
+    (r'^reg/', include(reg_patterns)),
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),
-    (r'^reg/$', 'pressroom.register.views.register'),
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 )
