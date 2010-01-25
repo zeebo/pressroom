@@ -1,6 +1,6 @@
 # Create your views here.
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from pressroom.register.forms import RegistrationForm
 from pressroom.register.models import RegistrationToken
 from django.contrib.auth.models import User
@@ -24,5 +24,11 @@ def register(request):
   return render_to_response('register/register.html', {'form':form})
 
 def activate(request, token):
-  return render_to_response('base.html')
+  reg_token = get_object_or_404(RegistrationToken, token=token)
+  reg_token.user.is_active = True
+  reg_token.user.save()
+  
+  reg_token.delete()
+  
+  return HttpResponse("User activated.")
   
