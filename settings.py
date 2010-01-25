@@ -84,3 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'pressroom.register',
 )
+
+AUTHENTICATION_BACKENDS = (
+  'pressroom.register.backends.EmailBackend',
+)

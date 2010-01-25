@@ -6,3 +6,6 @@ class RegistrationToken(models.Model):
   user = models.ForeignKey(User)
   token = models.CharField(max_length=50)
   reg_date = models.DateTimeField(auto_now_add=True)
+
+
+User._meta.get_field('email')._unique = True
