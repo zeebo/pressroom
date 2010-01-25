@@ -14,9 +14,17 @@ auth_patterns = patterns('django.contrib.auth.views',
   (r'^logout/$', 'logout', {'template_name': 'register/logout.html', 'next_page' : '/'})
 )
 
+group_patterns = patterns('pressroom.groups.views',
+  (r'^$', 'list_groups'),
+  (r'^(?P<group_name>\w+)/add/$', 'add_group'),
+  (r'^(?P<group_name>\w+)/remove/$', 'del_group'),
+  (r'^(?P<group_name>\w+)/$', 'view_group'),
+)
+
 urlpatterns = patterns('',
   (r'^reg/', include(reg_patterns)),
-  (r'^auth/', include(auth_patterns)),
+  (r'^accounts/', include(auth_patterns)),
+  (r'^companies/', include(group_patterns)),
   (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),
   (r'^admin/', include(admin.site.urls)),
 )
