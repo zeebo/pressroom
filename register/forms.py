@@ -10,7 +10,7 @@ class RegistrationForm(forms.Form):
   def clean_email(self):
     data = self.cleaned_data['email']
     if data:
-      if User.objects.filter(username=data).count() > 0:
+      if User.objects.filter(email=data).count() > 0:
         raise forms.ValidationError("Email already registered")
     
     return data
