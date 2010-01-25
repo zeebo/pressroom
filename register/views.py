@@ -12,7 +12,7 @@ def register(request):
     form = RegistrationForm(request.POST)
     if form.is_valid():
       #Make a new (inactive) user, and mail out the registration token
-      new_user = User(username=sha(form.cleaned_data['email']), 30), is_active=False, **form.cleaned_data)
+      new_user = User(username=sha(form.cleaned_data['email'], 30), is_active=False, **form.cleaned_data)
       new_user.set_password(form.cleaned_data['password'])
       new_user.save()
       

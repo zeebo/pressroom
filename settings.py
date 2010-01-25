@@ -88,3 +88,6 @@ INSTALLED_APPS = (
 AUTHENTICATION_BACKENDS = (
   'pressroom.register.backends.EmailBackend',
 )
+
+
+LOGIN_REDIRECT_URL = '/'
