@@ -1,3 +1,5 @@
+import random
+import hashlib
 
 def sha(data=None, len=0):
   if data is None:

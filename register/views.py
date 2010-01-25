@@ -5,7 +5,6 @@ from pressroom.register.forms import RegistrationForm
 from pressroom.register.models import RegistrationToken
 from pressroom.utils import sha
 from django.contrib.auth.models import User
-import hashlib, random
 
 def register(request):
   if request.method == 'POST':
