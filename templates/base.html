@@ -5,6 +5,20 @@
 <body>
 {% block content %}
 Hello {{ user.first_name }}!
+<hr>
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<hr>
+<ul>
+{% for group in user.groups.get_query_set %}
+    <li>{{ group }}</li>
+{% endfor %}
+</ul>
 {% endblock %}
 </body>
 </html>
