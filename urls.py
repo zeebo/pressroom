@@ -7,10 +7,6 @@ from django.core.urlresolvers import reverse
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-  (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}, 'root'),
-)
-
 post_info = {
   'queryset': Post.objects.all(),
 }
@@ -41,10 +37,11 @@ post_patterns = patterns('',
   (r'^(?P<group_name>\w+)/(?P<slug>[\w-]+)/$', 'pressroom.post.views.post_detail'),
 )
 
-urlpatterns += patterns('',
+urlpatterns = patterns('',
   (r'^register/', include(reg_patterns)),
   (r'^accounts/', include(auth_patterns)),
   (r'^companies/', include(group_patterns)),
   (r'^releases/', include(post_patterns)),
   (r'^admin/', include(admin.site.urls)),
+  (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),
 )
