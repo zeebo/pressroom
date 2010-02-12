@@ -3,16 +3,16 @@
 <title>Hello</title>
 </head>
 <body>
-{% block content %}
-Hello {{ user.first_name }}!
-<hr>
 {% if messages %}
 <ul>
     {% for message in messages %}
     <li>{{ message }}</li>
     {% endfor %}
 </ul>
+<hr>
 {% endif %}
+{% block content %}
+Hello {{ user.first_name }}!
 <hr>
 <ul>
 {% for group in user.groups.get_query_set %}
