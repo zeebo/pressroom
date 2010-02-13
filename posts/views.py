@@ -1,5 +1,5 @@
 from django.views.generic.list_detail import object_list, object_detail
-from pressroom.post.models import Post
+from pressroom.posts.models import Post
 
 def post_list_for(request, group_name):
   post_set = Post.objects.filter(company__name__exact=group_name)

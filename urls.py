@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from pressroom.post.models import Post
+from pressroom.posts.models import Post
 from django.contrib.auth.models import Group
 from django.core.urlresolvers import reverse
 
@@ -33,8 +33,8 @@ group_patterns = patterns('',
 
 post_patterns = patterns('',
   (r'^$', 'django.views.generic.list_detail.object_list', post_info, 'list_posts'),
-  (r'^(?P<group_name>\w+)/$', 'pressroom.post.views.post_list_for'),
-  (r'^(?P<group_name>\w+)/(?P<slug>[\w-]+)/$', 'pressroom.post.views.post_detail'),
+  (r'^(?P<group_name>\w+)/$', 'pressroom.posts.views.post_list_for'),
+  (r'^(?P<group_name>\w+)/(?P<slug>[\w-]+)/$', 'pressroom.posts.views.post_detail'),
 )
 
 urlpatterns = patterns('',
