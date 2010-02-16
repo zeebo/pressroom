@@ -3,6 +3,7 @@ from django.contrib.auth.models import Group
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import slugify
+from django.core.urlresolvers import reverse
 import datetime
 
 # Create your models here.
@@ -23,6 +24,12 @@ class Post(models.Model):
     if not self.id:
       self.slug = slugify(self.title)
     super(self.__class__, self).save()
+    
+  def get_absolute_url(self):
+    return reverse('pressroom.posts.views.post_detail', kwargs={'slug':self.slug, 'group_name':self.company.name})
+  
+  def description(self):
+    return self.display_body()[:100]
 
 
 class PostAdmin(admin.ModelAdmin):

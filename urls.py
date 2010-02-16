@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from pressroom.posts.models import Post
+from pressroom.posts.views import CompanyRSSFeed, PostRSSFeed
 from django.contrib.auth.models import Group
-from django.core.urlresolvers import reverse
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -31,10 +31,12 @@ group_patterns = patterns('',
   (r'^(?P<group_name>\w+)/part/$', 'pressroom.groups.views.del_group'),
 )
 
-post_patterns = patterns('',
-  (r'^$', 'django.views.generic.list_detail.object_list', post_info, 'list_posts'),
-  (r'^(?P<group_name>\w+)/$', 'pressroom.posts.views.post_list_for'),
-  (r'^(?P<group_name>\w+)/(?P<slug>[\w-]+)/$', 'pressroom.posts.views.post_detail'),
+post_patterns = patterns('pressroom.posts.views',
+  (r'^$', 'post_list'),
+  (r'^rss\.xml$', PostRSSFeed()),
+  (r'^(?P<group_name>\w+)/$', 'post_list_for'),
+  (r'^(?P<group_name>\w+)/(?P<slug>[\w-]+)/$', 'post_detail'),
+  (r'^(?P<group_name>\w+)/rss\.xml$', CompanyRSSFeed()),
 )
 
 urlpatterns = patterns('',
