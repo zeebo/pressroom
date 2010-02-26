@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 from pressroom.posts.models import Post
 from pressroom.posts.views import CompanyRSSFeed, PostRSSFeed
 from django.contrib.auth.models import Group
+from pressroom.settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -45,5 +46,6 @@ urlpatterns = patterns('',
   (r'^companies/', include(group_patterns)),
   (r'^releases/', include(post_patterns)),
   (r'^admin/', include(admin.site.urls)),
+  (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
   (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),
 )
