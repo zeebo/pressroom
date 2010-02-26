@@ -1,25 +1,40 @@
 <html>
 <head>
-<title>Hello</title>
+<title>Yes News Now</title>
+<link rel=stylesheet href="media/main.css" type="text/css" />
 </head>
 <body>
+<div id="header">
+    <h1>Yes News Now</h1>
+    <div id="login">
+        login form
+    </div>
+</div>
 {% block messages %}
 {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
+<div id="messages">
+    <ul>
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 {% endblock %}
-{% block content %}
-Hello {{ user.first_name }}!
-<hr>
-<ul>
-{% for group in user.groups.get_query_set %}
-    <li>{{ group }}</li>
-{% endfor %}
-</ul>
+<div id="content">
+    {% block content %}
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    {% endblock %}
+</div>
+{% block companies %}
+<div id="companies">
+    <h2>Companies we represent</h2>
+</div>
 {% endblock %}
 </body>
 </html>

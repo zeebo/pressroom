@@ -1,0 +1,20 @@
+@blue_color: rgb(62, 85, 220);
+
+.border {
+	border: 1px solid (@blue_color * .8);
+}
+.rounded_corners (@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+.drop_shadow (@radius: 3px, @color: #666) {
+	-moz-box-shadow: @radius @radius @radius @color;
+	-webkit-box-shadow: @radius @radius @radius @color;
+	box-shadow: @radius @radius @radius @color;
+}
+.text_shadow (@radius: 1px, @color: #fff) {
+	text-shadow: @radius @radius @radius @color;
+	-moz-text-shadow: @radius @radius @radius @color;
+	-webkit-text-shadow: @radius @radius @radius @color;
+}
