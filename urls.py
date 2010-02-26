@@ -1,18 +1,15 @@
 from django.conf.urls.defaults import *
 from pressroom.posts.models import Post
 from pressroom.posts.views import CompanyRSSFeed, PostRSSFeed
-from django.contrib.auth.models import Group
+from pressroom.companies.models import Company
 from pressroom.settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-post_info = {
-  'queryset': Post.objects.all(),
-}
-group_info = {
-  'queryset': Group.objects.all(),
+company_info = {
+  'queryset': Company.objects.all(),
 }
 
 reg_patterns = patterns('pressroom.register.views',
@@ -25,11 +22,11 @@ auth_patterns = patterns('django.contrib.auth.views',
   (r'^logout/$', 'logout', {'template_name': 'register/logout.html', 'next_page' : '/'})
 )
 
-group_patterns = patterns('',
-  (r'^$', 'django.views.generic.list_detail.object_list', group_info, 'list_groups'),
-  (r'^(?P<group_name>\w+)/$', 'pressroom.groups.views.group_detail'),
-  (r'^(?P<group_name>\w+)/join/$', 'pressroom.groups.views.add_group'),
-  (r'^(?P<group_name>\w+)/part/$', 'pressroom.groups.views.del_group'),
+company_patterns = patterns('',
+  (r'^$', 'django.views.generic.list_detail.object_list', company_info, 'list_companiess'),
+  (r'^(?P<company_name>\w+)/$', 'pressroom.companies.views.company_detail'),
+  (r'^(?P<company_name>\w+)/join/$', 'pressroom.companies.views.join_company_list'),
+  (r'^(?P<company_name>\w+)/part/$', 'pressroom.companies.views.part_company_list'),
 )
 
 post_patterns = patterns('pressroom.posts.views',
@@ -43,7 +40,7 @@ post_patterns = patterns('pressroom.posts.views',
 urlpatterns = patterns('',
   (r'^register/', include(reg_patterns)),
   (r'^accounts/', include(auth_patterns)),
-  (r'^companies/', include(group_patterns)),
+  (r'^companies/', include(company_patterns)),
   (r'^releases/', include(post_patterns)),
   (r'^admin/', include(admin.site.urls)),
   (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
