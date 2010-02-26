@@ -87,6 +87,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'pressroom.register',
     'pressroom.posts',
+#    'pressroom.companies',
+    'pressroom.user_admin',
 )
 
 AUTHENTICATION_BACKENDS = (
