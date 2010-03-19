@@ -1,1 +1,87 @@
-.border { border: 1px solid #3144b0; }
+#wrap { text-align: center; }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: helvetica;
+  background-image: url('/media/images/136.gif');
+}
+#navigation {
+  background-color: #dddddd;
+  background-image: url('/media/images/vertical-gradient-50.png');
+  background-repeat: repeat-x;
+  height: 50px;
+}
+#navigation ul {
+  padding: 0;
+  margin: 0;
+}
+#navigation ul li { display: inline; }
+#navigation ul li a {
+  margin-right: -2px;
+  float: left;
+  display: block;
+  width: 130px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #dddddd;
+  text-decoration: none;
+  color: #000000;
+  background-image: url('/media/images/vertical-gradient-50.png');
+  background-repeat: repeat-x;
+}
+#navigation ul li a:hover { background-color: #aaaaaa; }
+#content {
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #ffffff;
+  padding-top: 20px;
+  text-align: left;
+}
+#content .padding_wrap { padding: 20px; }
+#content h2 {
+  margin: 0;
+  padding: 0;
+}
+#content .date { font-size: 80%; }
+#content p { font-size: 90%; }
+#header {
+  background-image: url('/media/images/vertical-gradient-100.png');
+  background-repeat: repeat-x;
+  background-color: #343693;
+  height: 100px;
+  margin-top: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: 1px solid black;
+}
+#header h1 {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000000;
+  -moz-text-shadow: 1px 1px 1px #000000;
+  -webkit-text-shadow: 1px 1px 1px #000000;
+  margin-top: 20px;
+}
+#header .emphasis {
+  text-transform: uppercase;
+  font-style: italic;
+}
+#footer {
+  text-align: right;
+  padding-bottom: 20px;
+}
+#footer span {
+  color: #ffffff;
+  font-size: 60%;
+}

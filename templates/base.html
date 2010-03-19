@@ -1,40 +1,52 @@
 <html>
 <head>
 <title>Yes News Now</title>
+<link rel=stylesheet href="/media/grid.css" type="text/css" />
 <link rel=stylesheet href="/media/main.css" type="text/css" />
 </head>
 <body>
-<div id="header">
-    <h1>Yes News Now</h1>
-    <div id="login">
-        login form
+	<div id="wrap">
+    <div id="header" class="row">
+		<h1>Yes News <span class="emphasis">Now</span></h1>
     </div>
-</div>
-{% block messages %}
-{% if messages %}
-<div id="messages">
-    <ul>
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-</div>
-{% endif %}
-{% endblock %}
-<div id="content">
-    {% block content %}
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-    </ul>
-    {% endblock %}
-</div>
-{% block companies %}
-<div id="companies">
-    <h2>Companies we represent</h2>
-</div>
-{% endblock %}
+    <div id="navigation" class="row">
+        <ul>
+            <li><a href="">Companies</a></li>
+            <li><a href="">Releases</a></li>
+            <li><a href="">Releases</a></li>
+            <li><a href="">Releases</a></li>
+            <li><a href="">Releases</a></li>
+        </ul>
+    </div>
+	<div id="content" class="row">
+		<div class="column grid_8">
+			<div class="padding_wrap">
+				<h2>News Item Title (company)</h2>
+				<span class="date">Today - 5:33pm</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
+			
+				<h2>News Item Title (company)</h2>
+				<span class="date">Today - 5:33pm</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
+			
+				<h2>News Item Title (company)</h2>
+				<span class="date">Today - 5:33pm</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
+			</div>
+		</div>
+		<div class="column grid_4">
+			<h2>Sidebar</h2>
+			<ul>
+				<li>Sidebar Item</li>
+				<li>Sidebar Item</li>
+				<li>Sidebar Item</li>
+				<li>Sidebar Item</li>
+				<li>Sidebar Item</li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer" class="row">
+		<div class="column grid_12"><span>Copyright (c) Some people. A division of Yes International Inc.</span></div>
+	</div>
 </body>
 </html>
