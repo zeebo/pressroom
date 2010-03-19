@@ -5,6 +5,7 @@ body {
   background-color: #ffffff;
   font-family: helvetica;
   background-image: url('/media/images/136.gif');
+  color: #333333;
 }
 #navigation {
   background-color: #dddddd;
@@ -48,14 +49,20 @@ body {
   padding: 0;
 }
 #content .newsitem {
-  border-top: 1px solid black;
+  font-size: 120%;
+  font-variant: small-caps;
+  letter-spacing: 0.15ex;
+  border-top: 1px solid #dddddd;
   padding-top: 20px;
 }
 #content .first {
   border-top: none;
   padding-top: 0;
 }
-#content .date { font-size: 80%; }
+#content .date {
+  color: #999999;
+  font-size: 65%;
+}
 #content p { font-size: 90%; }
 #header {
   background-image: url('/media/images/vertical-gradient-100.png');
@@ -116,13 +123,3 @@ body {
   margin-bottom: 5px;
 }
 #login form fieldset input[type=submit] { float: right; }
-body { color: #333333; }
-#content h2 {
-  font-size: 120%;
-  font-variant: small-caps;
-  letter-spacing: 0.15ex;
-}
-#content .date {
-  color: #999999;
-  font-size: 65%;
-}
