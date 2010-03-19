@@ -40,13 +40,20 @@ body {
   -moz-border-bottom-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #ffffff;
-  padding-top: 20px;
   text-align: left;
 }
 #content .padding_wrap { padding: 20px; }
 #content h2 {
   margin: 0;
   padding: 0;
+}
+#content .newsitem {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+#content .first {
+  border-top: none;
+  padding-top: 0;
 }
 #content .date { font-size: 80%; }
 #content p { font-size: 90%; }
@@ -84,4 +91,38 @@ body {
 #footer span {
   color: #ffffff;
   font-size: 60%;
+}
+#login { text-align: left; }
+#login form {
+  margin: 0;
+  width: 256px;
+}
+#login form fieldset { border: none; }
+#login form fieldset legend { display: none; }
+#login form fieldset label {
+  color: #ffffff;
+  margin: 0;
+  font-size: 60%;
+  display: block;
+}
+#login form fieldset input[type=text] {
+  width: 150px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+#login form fieldset input[type=password] {
+  width: 150px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+#login form fieldset input[type=submit] { float: right; }
+body { color: #333333; }
+#content h2 {
+  font-size: 120%;
+  font-variant: small-caps;
+  letter-spacing: 0.15ex;
+}
+#content .date {
+  color: #999999;
+  font-size: 65%;
 }

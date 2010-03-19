@@ -137,7 +137,6 @@ body {
 	border-bottom-right-radius: @radius;
 	
 	background-color: #fff;
-	padding-top: 20px;
 	text-align: left;
 	
 	.padding_wrap {
@@ -145,8 +144,18 @@ body {
 	}
 	
 	h2 {
+		//font-family: Georgia;
 		margin: 0;
 		padding: 0;
+	}
+	.newsitem {
+		border-top: @border_style;
+		padding-top: 20px;
+	}
+	
+	.first {
+		border-top: none;
+		padding-top: 0;
 	}
 	
 	.date {
@@ -201,3 +210,40 @@ body {
 		font-size: 60%;
 	}
 }
+
+#login {
+	text-align: left;
+	form {
+		margin:0;
+		width:256px;
+		
+		fieldset {
+			border: none;
+			
+			legend {
+				display: none;
+			}
+			
+			label {
+				color: @color_light;
+				margin: 0;
+				font-size: 60%;
+				display: block;
+			}
+			
+			input[type=text], input[type=password] {
+				width: 150px;
+				margin: 0;
+				margin-bottom: 5px;
+			}
+			
+			input[type=submit] {
+				float: right;
+			}
+		}
+	}
+}
+
+body { color: #333 }
+#content h2 { font-size: 120%; font-variant: small-caps; letter-spacing:0.15ex; }
+#content .date { color:#999; font-size:65%; }
