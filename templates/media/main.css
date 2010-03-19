@@ -35,10 +35,10 @@ body {
 #navigation ul li a:hover { background-color: #aaaaaa; }
 #content {
   -webkit-border-bottom-left-radius: 20px;
-  -moz-border-bottomleft-radius: 20px;
+  -moz-border-radius-bottomleft: 20px;
   border-bottom-left-radius: 20px;
   -webkit-border-bottom-right-radius: 20px;
-  -moz-border-bottomright-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
   border-bottom-right-radius: 20px;
   background-color: #ffffff;
   text-align: left;
@@ -71,10 +71,10 @@ body {
   height: 100px;
   margin-top: 20px;
   -webkit-border-top-left-radius: 20px;
-  -moz-border-topleft-radius: 20px;
+  -moz-border-radius-topleft: 20px;
   border-top-left-radius: 20px;
   -webkit-border-top-right-radius: 20px;
-  -moz-border-topright-radius: 20px;
+  -moz-border-radius-topright: 20px;
   border-top-right-radius: 20px;
   border-bottom: 1px solid black;
 }

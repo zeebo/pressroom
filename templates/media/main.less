@@ -67,75 +67,15 @@ body {
 		}
 	}
 }
-/*
-#navigation {
-	ul {
-		padding: 0;
-		margin: 0;
-		li {
-			@width: 130px;
-			@height: 50px;
-			@bg_color: #ddd;
-			@text_color: #000;
-			@hover_color: #aaa;
-			@border_style: none; //1px solid black;
-			@shadow_radius: 5px;
-			@shadow_color: #666;
-			@radius: 20px;
-			display: inline;
-			:first-child a {
-				-webkit-border-top-left-radius: @radius;
-				-moz-border-top-left-radius: @radius;
-				border-top-left-radius: @radius;
-				-webkit-border-bottom-left-radius: @radius;
-				-moz-border-bottom-left-radius: @radius;
-				border-bottom-left-radius: @radius;
-				border-left: @border_style;
-			}
-			:last-child a {
-				-webkit-border-top-right-radius: @radius;
-				-moz-border-top-right-radius: @radius;
-				border-top-right-radius: @radius;
-				-webkit-border-bottom-right-radius: @radius;
-				-moz-border-bottom-right-radius: @radius;
-				border-bottom-right-radius: @radius;
-				border-right: @border_style;
-			}
-			a {
-				.drop_shadow(@shadow_radius, @shadow_color);
-				margin-bottom: 2*@shadow_radius;
-				margin-right: -2px;
-				border-top: @border_style;
-				border-bottom: @border_style;
-				float: left;
-				display: block;
-				width: @width;
-				height: @height;
-				line-height: @height;
-				text-align: center;
-				background-color: @bg_color;
-				text-decoration: none;
-				color: @text_color;
-				background-image: url('/media/images/vertical-gradient-50.png');
-				background-repeat: repeat-x;
-				:hover {
-					background-color: @hover_color;
-				}
-			}
-		}
-	}
-}
-*/
-
 #content {
 	@border_style: 1px solid #ddd;
 	@radius: 20px;
 	
 	-webkit-border-bottom-left-radius: @radius;
-	-moz-border-bottomleft-radius: @radius;
+	-moz-border-radius-bottomleft: @radius;
 	border-bottom-left-radius: @radius;
 	-webkit-border-bottom-right-radius: @radius;
-	-moz-border-bottomright-radius: @radius;
+	-moz-border-radius-bottomright: @radius;
 	border-bottom-right-radius: @radius;
 	
 	background-color: #fff;
@@ -185,10 +125,10 @@ body {
 	margin-top: 20px;
 	
 	-webkit-border-top-left-radius: @radius;
-	-moz-border-topleft-radius: @radius;
+	-moz-border-radius-topleft: @radius;
 	border-top-left-radius: @radius;
 	-webkit-border-top-right-radius: @radius;
-	-moz-border-topright-radius: @radius;
+	-moz-border-radius-topright: @radius;
 	border-top-right-radius: @radius;
 	
 	border-bottom: 1px solid black;
