@@ -1,5 +1,5 @@
 from django.db import models
-from django.contib.auth.models import User
+from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.safestring import mark_safe
 import datetime
@@ -9,7 +9,7 @@ class Company(models.Model):
   stock_ticker = models.CharField(max_length=10)
   blurb = models.TextField()
   website = models.URLField()
-  #users = models.ManyToManyField(User)
+  users = models.ManyToManyField(User, related_name="companies")
   
   class Meta:
     verbose_name_plural = 'Companies'
@@ -18,7 +18,7 @@ class Post(models.Model):
   title = models.CharField(max_length=100)
   body = models.TextField()
   slug = models.SlugField(max_length=50, editable=False)
-  company = models.ForeignKey(Company)
+  company = models.ForeignKey(Company, related_name="posts")
   time_released = models.DateTimeField()
   
   def was_published_today(self):
