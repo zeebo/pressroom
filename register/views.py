@@ -1,10 +1,19 @@
-# Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from pressroom.register.forms import RegistrationForm
 from pressroom.register.models import RegistrationToken
-from pressroom.utils import sha
 from django.contrib.auth.models import User
+import random
+import hashlib
+
+def sha(data=None, len=0):
+  if data is None:
+    data = random.random()
+      
+  digest = hashlib.sha1(str(data)).hexdigest()
+  if len == 0:
+    return digest
+  return digest[:len]
 
 def register(request):
   if request.method == 'POST':

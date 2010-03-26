@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-<ul>
-    {% for post in object_list %}
-    <li>{{ post.title }} ({{post.slug}}) {{post.company.name}}</li>
-    {% endfor %}
-</ul>
-{% endblock %}

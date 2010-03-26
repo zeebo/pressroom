@@ -12,6 +12,10 @@
 			<h1>Yes News <span class="emphasis">Now</span></h1>
 		</div>
 		<div class="column grid_4" id="login">
+			{% if user.is_authenticated %}
+				<h3>Welcome {{user.email}}</h3>
+				<span><a href="">Logout</a></span>
+			{% else %}
 			<form method="post" action=""> 
 				<fieldset> 
 					<legend>Login</legend> 
@@ -20,6 +24,7 @@
 					<input type="submit" value="Login">
 				</fieldset> 
 			</form>
+			{% endif %}
 		</div>
     </div>
     <div id="navigation" class="row">
@@ -34,29 +39,12 @@
 	<div id="content" class="row">
 		<div class="column grid_8">
 			<div class="padding_wrap">
-				<h2 class="first newsitem">News Item Title (company)</h2>
-				<span class="date">Today - 5:33pm</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
-			
-				<h2 class="newsitem">News Item Title (company)</h2>
-				<span class="date">Today - 5:33pm</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
-			
-				<h2 class="newsitem">News Item Title (company)</h2>
-				<span class="date">Today - 5:33pm</span>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat interdum diam, vitae luctus ligula mattis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget odio id turpis volutpat hendrerit quis eu lacus. Donec in urna in enim consequat venenatis. In enim ante, adipiscing in egestas et, condimentum a erat. Morbi venenatis ante non purus porta pulvinar vitae ac arcu. Vivamus tincidunt consequat metus eget lacinia. Suspendisse sed lectus sit amet est consequat sagittis. Pellentesque ante diam, pulvinar at ultricies id, faucibus et nibh. Pellentesque est metus, sollicitudin vel imperdiet at, facilisis id sapien. Donec dignissim, elit non facilisis ultricies, ante nunc pretium metus, eget sollicitudin turpis mi in quam.</p>
+				{% block content %}{% endblock %}
 			</div>
 		</div>
 		<div class="column grid_4">
 			<div class="padding_wrap">
-				<h2>Sidebar</h2>
-				<ul>
-					<li>Sidebar Item</li>
-					<li>Sidebar Item</li>
-					<li>Sidebar Item</li>
-					<li>Sidebar Item</li>
-					<li>Sidebar Item</li>
-				</ul>
+				{% block sidebar %}{% endblock %}
 			</div>
 		</div>
 	</div>

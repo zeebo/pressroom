@@ -83,12 +83,10 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-#    'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.admin',
-    'pressroom.register',
-    'pressroom.posts',
-    'pressroom.companies',
-    'pressroom.user_admin',
+    'register',
+    'companies',
 )
 
 AUTHENTICATION_BACKENDS = (
