@@ -1,4 +1,7 @@
-#wrap { text-align: center; }
+#wrap {
+  text-align: center;
+  margin-top: 20px;
+}
 body {
   margin: 0;
   padding: 0;
@@ -69,7 +72,6 @@ body {
   background-repeat: repeat-x;
   background-color: #343693;
   height: 100px;
-  margin-top: 20px;
   -webkit-border-top-left-radius: 20px;
   -moz-border-radius-topleft: 20px;
   border-top-left-radius: 20px;
@@ -99,27 +101,72 @@ body {
   color: #ffffff;
   font-size: 60%;
 }
-#login { text-align: left; }
-#login form {
-  margin: 0;
-  width: 256px;
-}
-#login form fieldset { border: none; }
-#login form fieldset legend { display: none; }
-#login form fieldset label {
+.no_display { display: none; }
+.active_toggle {
+  background-color: #8e8596;
   color: #ffffff;
-  margin: 0;
+}
+.inactive_toggle {
+  background-color: #dcd9de;
+  color: #665874;
+}
+#login {
+  overflow: visible;
+  padding: 0 0 3px 0;
+  color: #ffffff;
   font-size: 60%;
+  position: relative;
+  text-align: right;
+  height: 30px;
+}
+#login #toggle {
+  text-decoration: none;
+  padding: 10px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+#login #login_menu {
+  padding: 0;
+  margin: 0;
+}
+#login #login_menu form {
+  text-align: left;
+  margin: 0;
+  width: 300px;
+  margin-top: -7px;
+}
+#login #login_menu form fieldset {
+  position: absolute;
+  right: -2px;
+  top: 17px;
+  -webkit-border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  border-bottom-left-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  border-bottom-right-radius: 15px;
+  -webkit-border-top-leftt-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  border-top-left-radius: 15px;
+  border: none;
+  background-color: #8e8596;
+  padding: 20px 20px 0 20px;
+}
+#login #login_menu form fieldset legend { display: none; }
+#login #login_menu form fieldset label {
+  margin: 0;
   display: block;
 }
-#login form fieldset input[type=text] {
+#login #login_menu form fieldset input[type=text] {
   width: 150px;
   margin: 0;
   margin-bottom: 5px;
 }
-#login form fieldset input[type=password] {
+#login #login_menu form fieldset input[type=password] {
   width: 150px;
   margin: 0;
   margin-bottom: 5px;
 }
-#login form fieldset input[type=submit] { float: right; }
+#login #login_menu form fieldset p { text-align: right; }

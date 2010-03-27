@@ -2,29 +2,42 @@
 <html>
 <head>
 <title>Yes News Now</title>
-<link rel=stylesheet href="/media/grid.css" type="text/css">
-<link rel=stylesheet href="/media/main.css" type="text/css">
+<link type="text/css" href="/media/css/eggplant/jquery-ui-1.8.custom.css" rel="stylesheet">
+<link type="text/css" href="/media/css/grid.css" rel="stylesheet" >
+<link type="text/css" href="/media/css/main.css" rel="stylesheet" >
+<script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#login_menu input[type=submit]").button({});
+	$("#toggle").bind('click',
+		function(){
+			$("#login_menu").toggleClass("no_display");
+			$("#toggle").toggleClass("active_toggle inactive_toggle");
+			return false;
+		}
+	);
+});
+</script>
 </head>
 <body>
 	<div id="wrap">
-    <div id="header" class="row">
-		<div class="column grid_8">
-			<h1>Yes News <span class="emphasis">Now</span></h1>
-		</div>
-		<div class="column grid_4" id="login">
-			{% if user.is_authenticated %}
-				<h3>Welcome {{user.email}}</h3>
-				<span><a href="">Logout</a></span>
-			{% else %}
+	<div id="login" class="row">
+		<a href="#" id="toggle" class="inactive_toggle">Log In</a>
+		<div id="login_menu" class="no_display">
 			<form method="post" action=""> 
 				<fieldset> 
 					<legend>Login</legend> 
-					<label for="id_username">Username:</label> <input id="id_username" type="text" name="username" maxlength="30">
+					<label for="id_username">Email:</label> <input id="id_username" type="text" name="username" maxlength="30">
 					<label for="id_password">Password:</label> <input type="password" name="password" id="id_password">
-					<input type="submit" value="Login">
+					<p><input type="submit" value="Login"></p>
 				</fieldset> 
 			</form>
-			{% endif %}
+		</div>
+	</div>
+    <div id="header" class="row">
+		<div class="column grid_12">
+			<h1>Yes News <span class="emphasis">Now</span></h1>
 		</div>
     </div>
     <div id="navigation" class="row">
