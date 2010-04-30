@@ -1,5 +1,5 @@
 from models import Company, Post
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.contrib import admin
 from django import forms
 

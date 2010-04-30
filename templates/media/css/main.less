@@ -2,7 +2,9 @@
 @color_normal: #44545a;
 @color_light: #ffffff;
 @color_accent: rgb(108,52,211);
-
+@button_background: #dcd9de;
+@button_background_down: #5f5964;
+@button_text: #665874;
 
 .rounded_corners (@radius: 5px) {
   -moz-border-radius: @radius;
@@ -21,6 +23,7 @@
 }
 #wrap {
 	text-align: center;
+	margin-top: 20px;
 }
 
 body {
@@ -122,7 +125,8 @@ body {
 	background-repeat: repeat-x;
 	background-color: @color_dark;
 	height: @height;
-	margin-top: 20px;
+
+	//margin-top: 20px;
 	
 	-webkit-border-top-left-radius: @radius;
 	-moz-border-radius-topleft: @radius;
@@ -155,35 +159,80 @@ body {
 		font-size: 60%;
 	}
 }
+.no_display {
+	display: none;
+}
+.active_toggle {
+	background-color: #8e8596;
+	color: @color_light;
+}
+.inactive_toggle {
+	background-color: @button_background;
+	color: @button_text;
+}
 
 #login {
-	text-align: left;
-	form {
-		margin:0;
-		width:256px;
-		
-		fieldset {
-			border: none;
+	overflow: visible;
+	padding: 0 0 3px 0;
+	color: @color_light;
+	font-size: 60%;
+	position: relative;
+	text-align: right;
+	height: 30px;
+	
+	#toggle {
+		text-decoration: none;
+		padding: 10px;
+		.rounded_corners(6px);
+		font-weight: bold;
+	}
+	
+	#login_menu {
+		padding: 0;
+		margin: 0;
+		form {
+			text-align: left;
+			margin:0;
+			width:300px;
+			margin-top: -7px;
+			fieldset {
+				position: absolute;
+				right: -2px;
+				top: 17px;
+				@radius: 15px;
 			
-			legend {
-				display: none;
-			}
+				-webkit-border-bottom-left-radius: @radius;
+				-moz-border-radius-bottomleft: @radius;
+				border-bottom-left-radius: @radius;
+				-webkit-border-bottom-right-radius: @radius;
+				-moz-border-radius-bottomright: @radius;
+				border-bottom-right-radius: @radius;
+				-webkit-border-top-leftt-radius: @radius;
+				-moz-border-radius-topleft: @radius;
+				border-top-left-radius: @radius;
 			
-			label {
-				color: @color_light;
-				margin: 0;
-				font-size: 60%;
-				display: block;
-			}
+				border: none;
+				background-color: @button_background_down * 1.5;
+				padding: 20px 20px 0 20px;
 			
-			input[type=text], input[type=password] {
-				width: 150px;
-				margin: 0;
-				margin-bottom: 5px;
-			}
+				legend {
+					display: none;
+				}
 			
-			input[type=submit] {
-				float: right;
+				label {
+					margin: 0;
+					display: block;
+				}
+			
+				input[type=text], input[type=password] {
+					width: 150px;
+					margin: 0;
+					margin-bottom: 5px;
+				}
+				
+				p {
+					text-align: right;
+				}
 			}
 		}
 	}
