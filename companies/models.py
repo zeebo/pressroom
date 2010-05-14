@@ -30,12 +30,17 @@ class Company(models.Model):
   class Meta:
     verbose_name_plural = 'Companies'
 
+class PostManager(models.Manager):
+  def published(self):
+    return self.exclude(time_released__gte=datetime.datetime.now()).order_by('-time_released')
+
 class Post(models.Model):
   title = models.CharField(max_length=100)
   body = models.TextField()
   slug = models.SlugField(max_length=50, editable=False)
   company = models.ForeignKey(Company, related_name="posts")
   time_released = models.DateTimeField()
+  objects = PostManager()
   
   @models.permalink
   def get_absolute_url(self):

@@ -1,6 +1,6 @@
 from models import Company, Post
 from django.views.generic.list_detail import object_list, object_detail
-
+from datetime import datetime
 #Some generic views yeahhhhhh
 
 def company_list(request):
@@ -19,16 +19,16 @@ def post_list(request):
   """
   List of most recent news posts
   """
-  return object_list(request, Post.objects.all())
+  return object_list(request, Post.objects.published())
 
 def post_list_for(request, stock_ticker):
   """
   List of posts for a company
   """
-  return object_list(request, Post.objects.filter(company__stock_ticker=stock_ticker))
+  return object_list(request, Post.objects.published())
 
 def post_detail(request, stock_ticker, slug):
   """
   Detail on a post
   """
-  return object_detail(request, Post.objects.filter(company__stock_ticker=stock_ticker), slug=slug)
+  return object_detail(request, Post.objects.published().filter(company__stock_ticker=stock_ticker), slug=slug)
