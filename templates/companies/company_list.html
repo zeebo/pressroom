@@ -3,7 +3,7 @@
 {% block content %}
 <ul>
     {% for company in object_list %}
-    <li>{{ company.full_name }}</li>
+    <li><a href="{{ company.get_absolute_url }}">{{ company.full_name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+You are looking at <u>{{ object.title }}</u>'s page for the company <a href="{{ object.company.get_absolute_url }}">{{object.company.full_name}}</a>.
+<hr>
+{{ object.display_body }}
+{% endblock %}

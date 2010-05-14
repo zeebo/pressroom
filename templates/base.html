@@ -25,7 +25,7 @@ $(function() {
 	<div id="login" class="row">
 		<a href="#" id="toggle" class="inactive_toggle">Log In</a>
 		<div id="login_menu" class="no_display">
-			<form method="post" action=""> 
+			<form method="post" action="{% url django.contrib.auth.views.login %}"> 
 				<fieldset> 
 					<legend>Login</legend> 
 					<label for="id_username">Email:</label> <input id="id_username" type="text" name="username" maxlength="30">
@@ -42,11 +42,9 @@ $(function() {
     </div>
     <div id="navigation" class="row">
         <ul>
-            <li><a href="">Companies</a></li>
-            <li><a href="">Releases</a></li>
-            <li><a href="">Releases</a></li>
-            <li><a href="">Releases</a></li>
-            <li><a href="">Releases</a></li>
+            <li><a href="{% url companies.views.company_list %}">Companies</a></li>
+            <li><a href="{% url companies.views.post_list %}">Releases</a></li>
+            <li><a class="right" href="{% url register.views.register %}">Register</a></li>
         </ul>
     </div>
 	<div id="content" class="row">

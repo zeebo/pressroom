@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="{% url pressroom.register.views.register %}" method="post">
+{% if message %}
+	{{ message }}
+{% else %}
+<form action="{% url register.views.register %}" method="post">
     {{form.as_p}}
     <input type="submit" value="Submit" />
 </form>
+{% endif %}
 {% endblock %}

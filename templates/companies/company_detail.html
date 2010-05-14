@@ -2,4 +2,9 @@
 
 {% block content %}
 You are looking at {{object.full_name}}'s page
+<ul>
+	{% for post in object.posts.all %}
+	<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
 {% endblock %}

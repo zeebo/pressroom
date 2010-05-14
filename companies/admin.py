@@ -7,7 +7,7 @@ class PostAdmin(admin.ModelAdmin):
   list_display = ('slug', 'company', 'time_released', 'was_published_today')
 
 class CompanyAdmin(admin.ModelAdmin):
-  list_display = ('full_name', )
+  list_display = ('full_name', 'number_of_users')
 
 class MyUserAdminForm(forms.ModelForm):
   class Meta:
