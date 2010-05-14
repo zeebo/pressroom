@@ -4,12 +4,18 @@ from django.template.defaultfilters import slugify
 from django.utils.safestring import mark_safe
 import datetime
 
+class UserProxy(User):
+  def __unicode__(self):
+    return self.email
+  class Meta:
+    proxy = True
+
 class Company(models.Model):
   full_name = models.CharField(max_length=100)
   stock_ticker = models.CharField(max_length=10, unique=True)
   blurb = models.TextField()
   website = models.URLField()
-  users = models.ManyToManyField(User, related_name="companies", blank=True)
+  users = models.ManyToManyField(UserProxy, related_name="companies", blank=True)
   
   @models.permalink
   def get_absolute_url(self):
